@@ -42,3 +42,23 @@ From these reults:
 
 * The number of degrees of freedom is > 20 which is the recommendation not to exceed to avoid insignificant values appearing to be significant.  The number of degrees of freedom could be reduced also for re-analysis.
 
+# Summary Statistics on Suspension Coils
+
+## Statistics of PSI
+
+<img width="344" alt="total_summary" src="https://user-images.githubusercontent.com/85037467/134826278-2223de8a-a0d2-421a-bd5e-00b2c30fc107.png">
+
+## Statistics Grouped by Manufacturing Lot
+
+<img width="507" alt="lot_summary" src="https://user-images.githubusercontent.com/85037467/134826289-3d290887-2992-45a9-9fb6-5cba2b47d760.png">
+
+### Discussion
+
+The design specificaitons of the MechaCar supspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch (psi).  Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually?
+
+The only lot which does not meet the design specification is Lot 3 with a variance of approximately 170.  The total suspension coil variance is approximately 62 psi which is below the 100 psi specification.
+
+
+
+
+
