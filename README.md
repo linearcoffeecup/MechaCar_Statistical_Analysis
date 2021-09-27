@@ -31,9 +31,9 @@ spoiler_angle | 0.31
 ground_clearance | 5.2E-8
 AWD | 0.19
 
-Number of Degrees of Freedom:  44
-Adjusted R-squared:  0.68
-p-value: 5.3E-11
+Number of Degrees of Freedom:  44 <br>
+Adjusted R-squared:  0.68 <br>
+p-value: 5.3E-11 <br>
 
 From these reults:
 
@@ -88,26 +88,14 @@ mean      | 3.17 (log10) -> 1479 PSI
 
 First, in comparing the manufacturing lot psi data statistics to the total population psi data statistics, it can readily be seen that the t-test does not apply for lot-comparison to total poplulation mean.  This is because the lot-variances (TABLE 4) are nowhere near the total population variance (TABLE 3).  The following **results were obtained  but should not be used for any statistical analysis** because the t-test pre-conditions are not met.
   
-**TABLE 6**
-  Lot1  |       Values
-:----------------:|:-------------------:
-p-value.  |  1
-mean      |  1500
+                                                                 
+**TABLE 6**  |                         |    |**TABLE 7**             |           |     | **TABLE 8**                |                  |
+:-----------:|:-----------------------:|:--:|:----------------------:|----------------:|:---:|:--------------------:|:----------------:|
+**Lot1**     |  **Values**             |    | **Lot2**               |  **Values**     |.    | **Lot3**             |  **Values**      |
+p-value      |  1                      |    | p-value                |  0.61           |     | p-value              |  0.04            | 
+mean         |  1500                   |    | mean                   |  1500           |     | mean                 |  1496            |             
 
-  
-**TABLE 6**
-  Lot2  |       Values
-:----------------:|:-------------------:
-p-value.  | 0.61
-mean      | 1500
-  
-  
-**TABLE 6**
-  Lot3  |       Values
-:----------------:|:-------------------:
-p-value.  | 0.04
-mean      | 1496
-  
+
  
   
 
