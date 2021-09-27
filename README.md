@@ -37,9 +37,15 @@ p-value: 5.3E-11 <br>
 
 From these reults:
 
+*Which variables provide a non-random amount of variance to the mpg values in the dataset?*
+
 * Regarding the individual p-values, the vehicle weight is less than 0.05 and is therefore statistically significant, i.e., not influenced by randomness.  The intercept is also statistically significant and as such is not influenced by randomness associated with the other independent variables: vehicle length, spoiler angle, or ground clearance.  Thus there is a statistical significance between the intercept and the vehicle weight.  Perhaps additional data for the other values could be gathered to determine if they may still influence the miles per gallon if they become statistically sigificant.
 
+*Is the slope of the linear model considered to be zero? Why or why not?*
+
 * The p-value in the summary table was found to be 5.3-11.  Based on this "multilinear p-value" (as opposed to the individual p-values) the null hypothesis can be rejected which means *the slopes are not zero*.
+
+*Does this linear model precict mpg of MechaCar prototypes effectively? Why or why not?*
 
 * The R-squared value is an indicator of how much variability in miles per gallon (dependent variable) is explained by the multiple linear model. The R-squared value of 0.68 indicates that the model can be used for predicting the *current dataset* performance.  However, 3 of 4 independent variables were not statistically significant, indicating that forcasting performance based on this dataset is not supported (i.e., the model has been "overfitted").
 
@@ -47,9 +53,9 @@ From these reults:
 
 # Summary Statistics on Suspension Coils <br>
 
-**TABLE 3**
-
 ## Statistics of PSI
+
+**TABLE 3**
 
 <img width="344" alt="total_summary" src="https://user-images.githubusercontent.com/85037467/134826278-2223de8a-a0d2-421a-bd5e-00b2c30fc107.png">
 
@@ -112,7 +118,7 @@ Rather than building onto the mtcars database, a separate dataframe can be made.
   
   a) **one-sided t-test** where the t-test is defined as t.test(statistical_MechaCar, mu=mean(statistical_df$cty)) on the city fuel efficiency for only the MechaCars but tested against the population mean.  Here sattistical_MechaCar <- subset(statistical_df, company == "MechaCar") is used.  The four conditions for a one-sample t-test should be checked prior to performimg the test.  
   
-The *null hypothesis* could be that the MechaCar city fuel efficiecy is predicted to have better efficiency with high statisitcal significance, or the *alternate hypothesis* could be that there is randomness seen in the data and so efficiency does not stand out for MechaCars compared to competitors.
+The *null hypothesis* could be that the MechaCar city fuel efficiecy is predicted to have better efficiency with high statisitcal significance, and the *alternate hypothesis* could be that there is randomness seen in the data and so efficiency does not stand out for MechaCars compared to competitors.
 
 b) **one-way ANOVA test** where for the aov() test the dependent variable will be cty and there will be two independent variables:  safety_rating and company.  The aov() test requires that the dependent variable be numeric and continuous (which it is) and the idependent variables be categorical (which they are).  In addition, an aov() test requires a data frame structure (which the statistical_df database was assumed to be generated with).  This test will explore the mean of the city fuel efficiency across MechaCar and competitor companies and the safety ratings of each car (recall that there is a one-to-one correspondence of safety rating and vihicle id).
 
