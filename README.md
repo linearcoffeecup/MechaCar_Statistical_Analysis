@@ -96,7 +96,27 @@ p-value      |  1                      |    | p-value                |  0.61    
 mean         |  1500                   |    | mean                   |  1500           |     | mean                 |  1496            |             
 
 
- 
+ ## Study Design:  MechaCar Versus Competition
   
+ ### Metrics
+  
+ The first consideratioh are the metrics to be included in the study.  When one looks at the mtcars database which comes with RStudio, it is seen that there are 11 variables.  Variables can be of different types:  numerical or categorical with their subtypes.  In this statistical study one metric will be city fuel efficiency (which is labeled cty in the mtcars database) which is of numerical type , and the other will be a safety rating which will be of categorical type.  There is also a need for a company column which will hold the names (or labels) of companies (ie MechaCar and competitors) which will also be of categorical type.
+  
+A look at the mtcars database shows that it does not have a safety rating metric, so this data will need to obtained and added.  Safety ratings should be otainable.
+  
+Rather than building onto the mtcars database, a separate dataframe can be made.  In addition to including the cty column and the safety_ratings column, a unique identifier column will also be added which will be the vehicle ID in the MechaCar database.  Therefore, vehicle IDs will also need to be obtained.  The new dataframe will be named statistical_df.  No null values will be allowed.  While fuel efficiency (cty) and safety (safety_rating) are to be tested against competition, inclusion of the unique vehicle ID helps with follow-up questions which may come up (e.g., from outliers or linear model fits).  The preparation of the database also includes checking the type of data.  The categorical data, safety_ratings will have to have the factor() function applied if it is found to be of integer type.  **Thus the new statistical_df data frame will have columns: vehichle_id, company, cty, and safety_rating.**
+  
+ ### Tests
+  
+ The tests to be performed will be:  
+  
+  a) *one-sided t-test* where the t-test is defined as t.test(statistical_MechaCar, mu=mean(statistical_df$cty)) on the city fuel efficiency for only the MechaCars but tested against the population mean.  Here sattistical_MechaCar <- subset(statistical_df, company == "MechaCar") is used.  The four conditions for a one-sample t-test should be checked prior to performimg the test.  The **null hypothesis** could be that the MechaCar city fuel efficiecy is predicted to have better efficiency with high statisitcal significance, or the **alternate hypothesis** could be that there is randomness seen in the data and so efficiency does not stand out for MechaCars compared to competitors.
 
+b) *one-way ANOVA test* where for the aov() test the dependent variable will be cty and there will be two independent variables:  safety_rating and company.  The aov() test requires that the dependent variable be numeric and continuous (which it is) and the idependent variables be categorical (which they are).  In addition, an aov() test requires a data frame structure (which the statistical_df database was assumed to be generated with).  This test will explore the mean of the city fuel efficiency across MechaCar and competitor companies and the safety ratings of each car (recall that there is a one-to-one correspondence of safety rating and vihicle id).
 
+A. 
+b) *one-way ANOVA test* where for the aov() test the dependent variable will be cty and there will be two independent variables:  safety_rating and company.  The aov() test requires that the dependent variable be numeric and continuous (which it is) and the idependent variables be categorical (which they are).  In addition, an aov() test requires a data frame structure (which the statistical_df database was assumed to be generated with).  This test will explore the mean of the city fuel efficiency across MechaCar and competitor companies and the safety ratings of each car (recall that there is a one-to-one correspondence of safety rating and vihicle id).
+
+The **null hypothesis** is that the MechaCars outperform competitors by having the highest (mean) city fuel efficiency *and* the highest (mean) safety rating.  The **alternative hypothesis** is that MechaCars do not statiscally outperform competitors for either fuel efficiency or safety rating or both.
+
+One side benefit of having one long column of companies (ie all companies in one column) is that the facet_wrap() function discussed in the Module coule be used to show a box_plot of safety rating versus dimensions city fuel efficiecy and companies.  This box plot would provide addtional statistical information as well as an easy visual presentation to see how MechaCars compare against competitors.
